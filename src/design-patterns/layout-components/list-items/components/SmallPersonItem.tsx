@@ -1,5 +1,5 @@
 import React from "react";
-import type { Person } from "../Usage";
+import type { Person } from "../../../../types/person";
 
 type SmallPersonItemProps = {
   person: Person;

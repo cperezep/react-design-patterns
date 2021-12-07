@@ -3,6 +3,10 @@ import styled from "styled-components";
 import { Usage as SplitScreen } from "./design-patterns/layout-components/split-screen/Usage";
 import { Usage as ListItems } from "./design-patterns/layout-components/list-items/Usage";
 import { Modal } from "./design-patterns/layout-components/modal";
+import { Usage as ContainerComponents } from "./design-patterns/container-components/Usage";
+
+import { worker } from "./mocks/browser";
+worker.start();
 
 function App() {
   return (
@@ -27,6 +31,11 @@ function App() {
           <h3>Hello World!</h3>
           <p>I'm a modal</p>
         </Modal>
+      </StyledPatternContainer>
+
+      <StyledPatternContainer>
+        <h2>Container Components</h2>
+        <ContainerComponents />
       </StyledPatternContainer>
     </StyledContainer>
   );

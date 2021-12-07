@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import type { Person } from "../Usage";
+import type { Person } from "../../../../types/person";
 
 type LargePersonItemProps = {
   person: Person;
