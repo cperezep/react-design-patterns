@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Usage as SplitScreen } from "./design-patterns/layout-components/split-screen/Usage";
 import { Usage as ListItems } from "./design-patterns/layout-components/list-items/Usage";
-import { Modal } from "./design-patterns/layout-components/modal";
 import { Usage as ContainerComponents } from "./design-patterns/container-components/Usage";
+import { Usage as UncontrolledComponents } from "./design-patterns/uncontrolled-components/Usage";
+import { Usage as ControlledComponents } from "./design-patterns/controlled-components/Usage";
+import { UncontrolledModal } from "./design-patterns/layout-components/UncontrolledModal";
 
 import { worker } from "./mocks/browser";
 worker.start();
@@ -27,15 +29,25 @@ function App() {
 
       <StyledPatternContainer>
         <h2>Modal</h2>
-        <Modal>
+        <UncontrolledModal>
           <h3>Hello World!</h3>
           <p>I'm a modal</p>
-        </Modal>
+        </UncontrolledModal>
       </StyledPatternContainer>
 
       <StyledPatternContainer>
         <h2>Container Components</h2>
         <ContainerComponents />
+      </StyledPatternContainer>
+
+      <StyledPatternContainer>
+        <h2>Uncontrolled Components</h2>
+        <UncontrolledComponents />
+      </StyledPatternContainer>
+
+      <StyledPatternContainer>
+        <h2>Controlled Components</h2>
+        <ControlledComponents />
       </StyledPatternContainer>
     </StyledContainer>
   );

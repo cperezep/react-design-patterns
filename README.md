@@ -24,6 +24,12 @@ Let's imagine that we have a container component with several child components i
 
 So the main idea with container components, we don't want our components to know where their data is coming from or how to manage it. We just want our components to be dumb and take some props and display whatever they need to display.
 
+## Controlled vs Uncontrolled Components
+
+Uncontrolled components are basically React components where the component itself keeps track of all its own internal state and really the only time we get data out of that component is when some event occurs. So this would be in the case of, let's say, a form when the user hits the Submit button. In an uncontrolled form, that would be the only time we actually know what values the inputs of that form contain.
+
+Controlled components, on the other hand, are basically components where their parent is the one that takes care of keeping track of the state and that state is then usually passed through to a controlled component as a prop of some sort.
+
 ## Available Scripts
 
 In the project directory, you can run:

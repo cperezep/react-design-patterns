@@ -23,7 +23,7 @@ type ModalProps = {
   children: React.ReactNode;
 };
 
-function Modal({ children }: ModalProps) {
+function UncontrolledModal({ children }: ModalProps) {
   const [shouldShow, setShouldShow] = useState<boolean>(false);
 
   return (
@@ -41,4 +41,4 @@ function Modal({ children }: ModalProps) {
   );
 }
 
-export { Modal };
+export { UncontrolledModal };

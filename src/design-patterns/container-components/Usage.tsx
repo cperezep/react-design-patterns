@@ -28,10 +28,12 @@ function Usage() {
   return (
     <>
       {/* Load current user from server */}
+      <h3>Current User</h3>
       <CurrentUserLoader>
         <UserInfo />
       </CurrentUserLoader>
       {/* - Generic user loader that allows to load different users instead of just the current user from server. */}
+      <h3>User Loader</h3>
       <UserLoader userId="1">
         <UserInfo />
       </UserLoader>
@@ -39,6 +41,7 @@ function Usage() {
         <UserInfo />
       </UserLoader>
       {/* Instead of having a container component that loads a specific type of resource, we're going to have a generic component that allows us to load any type of resource from the server */}
+      <h3>Resource Loader</h3>
       <ResourceLoader resourceUrl="/users/2" resourceName="user">
         <UserInfo />
       </ResourceLoader>
@@ -46,6 +49,7 @@ function Usage() {
         <ProductInfo />
       </ResourceLoader>
       {/*  Basically a container component, just like ResourceLoader. Except instead of starting off with the idea that we're going to be loading some resource from a URL on the server, this data source component, isn't going to know exactly where its data is coming from */}
+      <h3>Data Source</h3>
       <DataSource getData={getUser} resourceName="user">
         <UserInfo />
       </DataSource>
