@@ -5,6 +5,7 @@ import { Usage as ListItems } from "./design-patterns/layout-components/list-ite
 import { Usage as ContainerComponents } from "./design-patterns/container-components/Usage";
 import { Usage as UncontrolledComponents } from "./design-patterns/uncontrolled-components/Usage";
 import { Usage as ControlledComponents } from "./design-patterns/controlled-components/Usage";
+import { Usage as HighOrderComponents } from "./design-patterns/high-order-components/Usage";
 import { UncontrolledModal } from "./design-patterns/layout-components/UncontrolledModal";
 
 import { worker } from "./mocks/browser";
@@ -48,6 +49,11 @@ function App() {
       <StyledPatternContainer>
         <h2>Controlled Components</h2>
         <ControlledComponents />
+      </StyledPatternContainer>
+
+      <StyledPatternContainer>
+        <h2>High Order Components</h2>
+        <HighOrderComponents />
       </StyledPatternContainer>
     </StyledContainer>
   );

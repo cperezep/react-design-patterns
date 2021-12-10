@@ -30,6 +30,55 @@ Uncontrolled components are basically React components where the component itsel
 
 Controlled components, on the other hand, are basically components where their parent is the one that takes care of keeping track of the state and that state is then usually passed through to a controlled component as a prop of some sort.
 
+## High Order Components (HOC)
+
+Higher-Order Component (HOC) is a function that takes another component and injects additional properties into it. Think of it as wrapping your component with an extra layer that gives it more functionality.
+
+So, Why would we want to actually create these higher-order components? One thing that higher-order components are used for is sharing behavior between several of our components. And this is actually a lot like what we saw with our container components, how we were able to wrap different types of components in the same container and have them behave somewhat similarly. Another thing that they're used for is to add extra functionality to an existing component. So if we have an existing component that someone else built, what we can do is use higher-order components to add new functionality to that component.
+
+The purpose of HOCs is often to reuse common logic between components and separate logical and presentational layers. With the introduction of hooks, HOCs took a back seat for the most part. Although you see them less, HOCs are still relevant and have certain advantages over hooks, for example, better compatibility with the class-based components.
+
+```typescript
+// printProps.tsx
+import React, { ComponentType } from "react";
+
+function printProps<T>(
+  Component: ComponentType<T>
+): (hocProps: T) => JSX.Element {
+  return (hocProps: T) => {
+    console.log(hocProps);
+    return <Component {...hocProps} />;
+  };
+}
+
+export { printProps };
+```
+
+```typescript
+// Usage.tsx
+import React from "react";
+import { currentUser } from "../../mocks/handlers";
+import { UserInfo } from "../container-components/UserInfo";
+import { printProps } from "./PrintProps";
+
+const UserInfoWrapped = printProps(UserInfo);
+
+function Usage() {
+  return <UserInfoWrapped user={currentUser} />;
+}
+
+export { Usage };
+```
+
+ComponentType is a special type React provides for working with components in TypeScript.
+
+We used the T type in several places:
+
+- We’re setting our parameter type to ComponentType<T>. Now, within the scope of this function, T denotes the props type of the target component.
+- We’re also setting the hocProps type to T to enforce that our HOC component receives the same props as the target.
+
+Thanks to generics, TypeScript can dynamically calculate all of the props our original component accepts and enforce the same restriction for the HOC.
+
 ## Available Scripts
 
 In the project directory, you can run:

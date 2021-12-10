@@ -7,16 +7,16 @@ type ResourceLoaderProps = {
   resourceUrl: string;
 };
 
-function ResourceLoader<Type>({
+function ResourceLoader<T>({
   children,
   resourceName,
   resourceUrl,
 }: ResourceLoaderProps) {
-  const [data, setData] = useState<Type | undefined>(undefined);
+  const [data, setData] = useState<T>(null);
 
   useEffect(() => {
     async function getResource() {
-      const { data } = await axios.get<Type>(resourceUrl);
+      const { data } = await axios.get<T>(resourceUrl);
       setData(data);
     }
     getResource();

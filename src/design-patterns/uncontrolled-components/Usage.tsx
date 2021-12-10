@@ -11,9 +11,9 @@ function Usage() {
   }
   return (
     <>
-      <h4>Uncontrolled Form</h4>
+      <h3>Uncontrolled Form</h3>
       <UncontrolledForm />
-      <h4>Uncontrolled Modal</h4>
+      <h3>Uncontrolled Modal</h3>
       <UncontrolledModal>
         <h2>Uncontrolled modal</h2>
         <p>
@@ -22,7 +22,7 @@ function Usage() {
           hidden
         </p>
       </UncontrolledModal>
-      <h4>Uncontrolled Wizard</h4>
+      <h3>Uncontrolled Wizard</h3>
       <UncontrolledWizard onFinish={onFinish}>
         <Step1 />
         <Step2 />

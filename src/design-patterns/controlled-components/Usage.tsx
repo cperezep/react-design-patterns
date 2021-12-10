@@ -25,9 +25,9 @@ function Usage() {
 
   return (
     <>
-      <h4>Controlled Form</h4>
+      <h3>Controlled Form</h3>
       <ControlledForm />
-      <h4>Controlled Modal</h4>
+      <h3>Controlled Modal</h3>
       <button onClick={() => setShouldShow(true)}>Show Modal</button>
       <ControlledModal
         onRequestClose={() => setShouldShow(false)}
@@ -36,7 +36,7 @@ function Usage() {
         <h2>Controlled Modal</h2>
         <p>This is a controlled modal!</p>
       </ControlledModal>
-      <h4>Controlled Wizard</h4>
+      <h3>Controlled Wizard</h3>
       <ControlledWizard currentIndex={currentIndex} onNext={onNext}>
         <Step1 />
         <Step2 />

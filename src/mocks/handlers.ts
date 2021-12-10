@@ -4,7 +4,7 @@ import type { Product } from "../types/product";
 
 const delay = process.env.NODE_ENV === "test" ? 0 : 1500;
 
-let currentUser: Person = {
+export let currentUser: Person = {
   age: 54,
   hairColor: "brown",
   hobbies: ["swimming", "bicycling", "video games"],
@@ -36,7 +36,7 @@ export let users: Array<Person> = [
   },
 ];
 
-export const products: Array<Product> = [
+export let products: Array<Product> = [
   {
     id: 1,
     name: "Flat-Screen TV",
@@ -60,7 +60,7 @@ export const products: Array<Product> = [
   },
 ];
 
-type UpdateRequestBody = { user: Person };
+type UpdateRequestBody = Person | Product;
 type UpdateResponseBody =
   | Person
   | Array<Person>
@@ -96,9 +96,11 @@ const handlers = [
     "/users/:id",
     (req, res, ctx) => {
       const { id } = req.params;
-      const { user: updatedUser } = req.body;
+      const updatedUser = req.body as Person;
 
-      users = users.map((user) => (user.id === id ? updatedUser : user));
+      users = users.map((user) =>
+        user.id === Number(id) ? updatedUser : user
+      );
       return res(
         ctx.delay(delay),
         ctx.status(200),
@@ -121,6 +123,22 @@ const handlers = [
       ctx.json(products.find((product: Product) => product.id === Number(id)))
     );
   }),
+  rest.post<UpdateRequestBody, UpdateResponseBody>(
+    "/products/:id",
+    (req, res, ctx) => {
+      const { id } = req.params;
+      const updatedProduct = req.body as Product;
+
+      products = products.map((product) =>
+        product.id === Number(id) ? updatedProduct : product
+      );
+      return res(
+        ctx.delay(delay),
+        ctx.status(200),
+        ctx.json(products.find((product: Product) => product.id === Number(id)))
+      );
+    }
+  ),
 ];
 
 export { handlers };
