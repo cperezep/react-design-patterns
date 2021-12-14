@@ -11,7 +11,7 @@ type TextProps = {
   message?: string;
 };
 
-function Text({ message }: TextProps) {
+export function Text({ message }: TextProps) {
   return <h1>{message}</h1>;
 }
 

@@ -6,10 +6,11 @@ import { Usage as ContainerComponents } from "./design-patterns/container-compon
 import { Usage as UncontrolledComponents } from "./design-patterns/uncontrolled-components/Usage";
 import { Usage as ControlledComponents } from "./design-patterns/controlled-components/Usage";
 import { Usage as HighOrderComponents } from "./design-patterns/high-order-components/Usage";
+import { Usage as CustomHooks } from "./design-patterns/custom-hooks/Usage";
 import { UncontrolledModal } from "./design-patterns/layout-components/UncontrolledModal";
 
 import { worker } from "./mocks/browser";
-worker.start();
+worker.start({ onUnhandledRequest: "bypass" });
 
 function App() {
   return (
@@ -54,6 +55,11 @@ function App() {
       <StyledPatternContainer>
         <h2>High Order Components</h2>
         <HighOrderComponents />
+      </StyledPatternContainer>
+
+      <StyledPatternContainer>
+        <h2>Custom Hooks</h2>
+        <CustomHooks />
       </StyledPatternContainer>
     </StyledContainer>
   );
