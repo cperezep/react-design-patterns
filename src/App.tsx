@@ -7,6 +7,7 @@ import { Usage as UncontrolledComponents } from "./design-patterns/uncontrolled-
 import { Usage as ControlledComponents } from "./design-patterns/controlled-components/Usage";
 import { Usage as HighOrderComponents } from "./design-patterns/high-order-components/Usage";
 import { Usage as CustomHooks } from "./design-patterns/custom-hooks/Usage";
+import { Usage as FP } from "./design-patterns/functional-programming/Usage";
 import { UncontrolledModal } from "./design-patterns/layout-components/UncontrolledModal";
 
 import { worker } from "./mocks/browser";
@@ -60,6 +61,11 @@ function App() {
       <StyledPatternContainer>
         <h2>Custom Hooks</h2>
         <CustomHooks />
+      </StyledPatternContainer>
+
+      <StyledPatternContainer>
+        <h2>Functional Programming Patterns</h2>
+        <FP />
       </StyledPatternContainer>
     </StyledContainer>
   );

@@ -1,6 +1,13 @@
 # React: Design Patterns
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Design patterns are effective solutions to common application development challenges.
+
+Basically the patterns that we're going to be covering here are things that run into time and time again in basically every React application.
+
+- Creating reusable layouts.
+- Reusing complex logic between multiple components.
+- Working with forms.
+- Incorporating functional concepts into code.
 
 ## Layout Components
 
@@ -84,6 +91,19 @@ Thanks to generics, TypeScript can dynamically calculate all of the props our or
 A custom hook allows you to extract some components logic into a reusable function.
 
 A custom hook is a Javascript function that starts with use and that call can other hooks. Remember that components and hooks are functions, so we are really not creating any new concepts here. We are just refactoring our code into another function to make it reusable.
+
+## Functional Programming
+
+FP is a way of organizing our code base such that we minimize mutation and state change in our applications, we keep our functions independent of external data, this is something called pure functions, and we also treat functions as first-class citizens.
+
+Some of the most common applications of functional programming in React are:
+
+- Controlled Components: Basically the idea of those is that we can get the component into any state we want simply by passing in the right props. So the component isn't keeping track of its own state, and that's a pretty functional concept there.
+- Function Components: The act of defining our components as functions is itself, a very functional way of writing code.
+- High Order Components: Higher order components because they're functions that return other functions, which is an application of something called first-class functions.
+- **Recursive Components**: Recursive components are basically components that use recursion in order to achieve a desired effect.
+- **Component Composition**: Basically, this is when we take several different components and are able to combine them into one component to achieve a desired effect.
+- **Partially Applied Components**: Basically allow us to take more general components and by passing in only a subset of that components' props, create more specific versions of that component.
 
 ## Available Scripts
 
